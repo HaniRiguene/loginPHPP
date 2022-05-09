@@ -1,0 +1,92 @@
+<!-- generate login page -->
+<div class="container">
+    <?php if (isset($_GET['msg']) && $_GET['msg'] == 1) { ?>
+        <div class="alert alert-msg">
+            <strong>Success !</strong> You have been registered.
+        </div>
+        <!-- else -->
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 2) { ?>
+        <div class="alert alert-danger">
+            <strong>Error !</strong> Username already exists.
+        </div>
+        <!-- else -->
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 3) { ?>
+        <div class="alert alert-danger">
+            <strong>Error !</strong> Username does not exist.
+        </div>
+        <!-- else -->
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 4) { ?>
+        <div class="alert alert-danger">
+            <strong>Error !</strong> Password is incorrect.
+        </div>
+        <!-- else -->
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 5) { ?>
+        <div class="alert alert-success">
+            <strong>Success !</strong> You have been logged in.
+        </div>
+        <!-- else -->
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 6) { ?>
+        <div class="alert alert-danger">
+            <strong>Error !</strong> Token is incorrect.
+        </div>
+        <!-- else -->
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 7) { ?>
+        <div class="alert alert-success">
+            <strong>Success !</strong> You have been verified.
+        </div>
+        <!-- else -->
+    <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 8) { ?>
+        <div class="alert alert-danger">
+            <strong>Error !</strong> You have not been verified yet.
+        </div>
+        <!-- else -->
+        <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 9) { ?>
+        <div class="alert alert-danger">
+            <strong>Success !</strong> You have been verified. PLEASE LOG IN.
+        </div>
+        <!-- else -->
+        <?php } else if (isset($_GET['msg']) && $_GET['msg'] == 10) { ?>
+        <div class="alert alert-danger">
+            <strong>Error !</strong> You have not been verified. We've sent you a new valid mail.
+        </div>
+        <!-- else -->
+
+    <?php } ?>
+    <div class="row">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="login-form" action="login.php" method="post" role="form" style="display: block;">
+                        <div class="form-group">
+                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <input type="submit" name="submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                    <!-- <input type="submit" name="submit" id="login-submit" tabindex="5" class="form-control btn btn-login" value="Reset Password"> -->
+                                    <a href="../resetpassword/" class="btn btn-link">Reset Password</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
+
+
