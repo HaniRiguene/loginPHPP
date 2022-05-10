@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
         $stmt->execute(array(':username' => $username, ':password' => $password, ':token' => $token, ':dateTime' => $dateTime));
         var_dump(sendmail("HAni app", $username, "Lien de Verification", "Cliquez sur ce lien pour vérifier l'e-mail '.$verification_mail.'"));
 
-        // header('Location: ../login?msg=1');
+        header('Location: ../login?msg=1');
     }
 }
 
