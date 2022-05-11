@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
         $dateTime = date('Y-m-d H:i:s');
         $stmt = $dbh->prepare("INSERT INTO users (user_username, user_password, token, creation_date) VALUES (:username, :password, :token, :dateTime)");
         $stmt->execute(array(':username' => $username, ':password' => $password, ':token' => $token, ':dateTime' => $dateTime));
-        var_dump(sendmail("HAni app", $username, "Lien de Verification", "Cliquez sur ce lien pour vérifier l'e-mail '.$verification_mail.'"));
+        var_dump(sendmail("HAni app", $username, "Lien de Verification", "Cliquez sur ce lien pour vérifier l'e-mail s'il vous plait '.$verification_mail.'"));
 
         header('Location: ../login?msg=1');
     }
