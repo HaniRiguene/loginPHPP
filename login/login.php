@@ -30,8 +30,8 @@ if (isset($_POST['submit'])) {
         
         if ($row['user_password'] == $password) {
             
- session_start();
-            if ($row['user_status'] == 1) {
+            session_start();
+             if ($row['user_status'] == 1) {
                 $_SESSION['username'] = $username;
                 $_SESSION['user_id'] = $row['user_id'];
                 header('Location: ../');
