@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         // send email
         $verification_mail = "http://localhost/Hani/Login/reset?token=" . $token;
         (sendmail("HAni app", $username, "reLien de Verification", "Cliquez sur ce lien pour reset le mot de passe '.$verification_mail.'"));
-        // header('Location: ../resetpassword?msg=10');
+         header('Location: ../resetpassword?msg=10');
 }
 }
 // $stat=0;
