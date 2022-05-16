@@ -5,9 +5,9 @@ error_reporting(E_ALL);
 $graph_value=0;
 if(file_exists("pdo.php")){
     include("pdo.php");
-    //$pdo = new PDO('mysql:host=localhost;dbname=securelogin', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=securelogin', 'root', '');
     $sql = "SELECT * FROM securelogin";
-    $stmt = $pdo->prepare($sql);
+    $stmt = $pdo->prepare("SELECT * FROM securelogin");
     foreach ($stmt as $row) {
         $graph_value = $row['user_username'];
     }
