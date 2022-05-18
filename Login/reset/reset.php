@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(E_ALL);
+
 include('../resetpassword/checkData.php');
 
 if (isset($_POST['submit'])) {
@@ -23,3 +21,7 @@ if (isset($_POST['submit'])) {
         header('Location: ../resetpassword?msg=10');
     }
 }
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(E_ALL);
+?>
