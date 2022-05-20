@@ -4,12 +4,13 @@ ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 $graph_value=0;
 if(file_exists("pdo.php")){
-    include("pdo.php");
+   require_once("pdo.php");
     //$pdo = new PDO('mysql:host=localhost;dbname=securelogin', 'root', '');
     $sql = "SELECT * FROM securelogin";
     $stmt = $pdo->prepare($sql);
-    foreach ($stmt as $row) {
-        $graph_value = $row['user_username'];
+    $row = $stmt->fetchAll();
+      foreach ($stmt as $row) {
+        $graph_value = $row['user_id'];
     }
     if($graph_value==0){
         echo"[GRAPH_PULGIN_URBAIN] FATAL ERROR (PDO_VAR) : Variables corrompues, merci de consulter le manuel ou de réinitialiser le plugin.<br>";
@@ -32,11 +33,11 @@ if(file_exists("pdo.php")){
             function drawchart(){
                 //  generate data table
                 var data = google.visualization.arrayToDataTable([
-                    ['user_password', 'user_username'],
+                    ['user_status', 'user_id'],
                  <?php
                 $sql = "SELECT * FROM securelogin";
                 foreach ($pdo->query($sql) as $row) {
-                    echo "['".$row['user_password']."', ".$row['user_username']."],";
+                    echo "['".$row['user_status']."', ".$row['user_id']."],";
                 }
                 ?>
                 ]);
