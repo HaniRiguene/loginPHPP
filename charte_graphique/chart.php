@@ -2,15 +2,15 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
-$graph_value=0;
+$graph_values = 0;
 if(file_exists("pdo.php")){
    require_once("pdo.php");
     //$pdo = new PDO('mysql:host=localhost;dbname=securelogin', 'root', '');
-    $sql = "SELECT * FROM securelogin";
+    $sql = "SELECT * FROM graph_urbain_data";
     $stmt = $pdo->prepare($sql);
-    $row = $stmt->fetchAll();
-      foreach ($stmt as $row) {
-        $graph_value = $row['user_id'];
+    $rows = $stmt->fetchAll();
+      foreach ($rows as $row) {
+        $graph_value = $row['ID'];
     }
     if($graph_value==0){
         echo"[GRAPH_PULGIN_URBAIN] FATAL ERROR (PDO_VAR) : Variables corrompues, merci de consulter le manuel ou de réinitialiser le plugin.<br>";
@@ -33,11 +33,11 @@ if(file_exists("pdo.php")){
             function drawchart(){
                 //  generate data table
                 var data = google.visualization.arrayToDataTable([
-                    ['user_status', 'user_id'],
+                    ['x', 'y'],
                  <?php
-                $sql = "SELECT * FROM securelogin";
+                $sql = "SELECT * FROM graph_urbain_data";
                 foreach ($pdo->query($sql) as $row) {
-                    echo "['".$row['user_status']."', ".$row['user_id']."],";
+                    echo "['".$row['y']."', ".$row['x']."],";
                 }
                 ?>
                 ]);
