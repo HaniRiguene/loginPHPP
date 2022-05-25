@@ -6,5 +6,4 @@ if(isset($_SESSION['username'])){
 }
 
 
-
 include("../layout.php");
