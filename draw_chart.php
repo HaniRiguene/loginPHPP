@@ -2,7 +2,7 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
-$graph_value=0;
+//$graph_value=0;
 if(file_exists("pdo.php")){
     include("pdo.php");
     $pdo = new PDO('mysql:host=localhost;dbname=securelogin', 'root', '');
@@ -12,13 +12,13 @@ if(file_exists("pdo.php")){
         $graph_value = $row['user_username'];
     }
     if($graph_value==0){
-        echo"[GRAPH_PULGIN_URBAIN] FATAL ERROR (PDO_VAR) : Variables corrompues, merci de consulter le manuel ou de réinitialiser le plugin.<br>";
+        echo"there are no variable ";
         exit;
     }}
     else    
     {
-        echo"[GRAPH_PULGIN_URBAIN] FATAL ERROR (FILE_NO_EXIST) : Le Fichier PDO n'a pas éte trouvé sur le serveur .<br>";
-        echo"[GRAPH_PULGIN_URBAIN] ERROR (PDO_ERR) : Impossible de se connecter à la base de données : vérifiez l'état du fichier <br>";
+       // echo"[GRAPH_PULGIN_URBAIN] FATAL ERROR (FILE_NO_EXIST) : Le Fichier PDO n'a pas éte trouvé sur le serveur .<br>";
+        //echo"[GRAPH_PULGIN_URBAIN] ERROR (PDO_ERR) : Impossible de se connecter à la base de données : vérifiez l'état du fichier <br>";
         exit;
     }
     ?>
