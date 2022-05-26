@@ -5,7 +5,7 @@ $dataPoints = array();
 try{
      // Creating a new connection.
     // Replace your-hostname, your-db, your-username, your-password according to your database
-    $link = new \PDO(   'mysql:host=localhost;dbname=securelogin;charset=utf8mb4', //'mysql:host=localhost;dbname=canvasjs_db;charset=utf8mb4',
+    $link = new \PDO(   'mysql:host=localhost;dbname=securelogin;', //'mysql:host=localhost;dbname=canvasjs_db;charset=utf8mb4',
                         'root', //'root',
                         '', //'',
                         array(
@@ -14,7 +14,7 @@ try{
                         )
                     );
 	
-    $handle = $link->prepare('select x, y from datapoints'); 
+    $handle = $link->prepare("SELECT x from securelogin"); 
     $handle->execute(); 
     $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 		
@@ -33,7 +33,6 @@ catch(\PDOException $ex){
 <head>  
 <script>
 window.onload = function () {
- 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
