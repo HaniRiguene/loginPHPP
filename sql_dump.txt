@@ -1,15 +1,9 @@
---
--- Table structure for table `chart_data`
---
 
 CREATE TABLE IF NOT EXISTS `chart_data` (
   `language` varchar(12) NOT NULL,
   `nos` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `chart_data`
---
 
 INSERT INTO `chart_data` (`language`, `nos`) VALUES
 ('PHP', 300),
