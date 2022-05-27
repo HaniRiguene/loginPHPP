@@ -1,7 +1,7 @@
 <?Php
 $host_name = "localhost";
-$database = "my_db"; // Change your database name
-$username = "";          // Your database user id 
+$database = "chart_data"; // Change your database name
+$username = "root";          // Your database user id 
 $password = "";          // Your password
 
 //error_reporting(0);// With this no error reporting will be there
