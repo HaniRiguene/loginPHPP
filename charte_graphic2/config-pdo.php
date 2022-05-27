@@ -1,8 +1,8 @@
 <?php
 $host_name = "localhost";
-$database = "my_db"; // Change your database name
-$username = "userid";        // Your database user id 
-$password = "password";        // Your password
+$database = "chart_data"; // Change your database name
+$username = "root";        // Your database user id 
+$password = "";        // Your password
 
 //////// Do not Edit below /////////
 try {

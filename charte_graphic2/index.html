@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>plus2net.com : Pie chart using data from CSV file</title>
+<title>Hani chart</title>
 </head>
 <body >
 <script>
@@ -9,7 +9,7 @@ var my_2d=[["PHP","300"],["JavaScript","200"],["MySQL","100"],["JQuery","200"],[
 
 <div id="chart_div"></div>
 <br><br>
-<a href=https://www.plus2net.com/php_tutorial/chart-database.php>Pie Chart from MySQL database</a>
+<a href=https://www.plus2net.com/php_tutorial/chart-database.php>Hani's Chart from MySQL database</a>
 </body>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
@@ -26,7 +26,7 @@ for(i=0;i<my_2d.length;i++)
 data.addRow([my_2d[i][0],parseInt(my_2d[i][1])]);
 
 // above row adds the JavaScript two dimensional array data into required chart format
-    var options = {title:'plus2net.com :Nos of tutorials',
+    var options = {title:'Statistique du vente par categorie',
            width:500,
            height:500,
 		   legend:'left',

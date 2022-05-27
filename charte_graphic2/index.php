@@ -1,11 +1,11 @@
-<!doctype html public "-//w3c//dtd html 3.2//en">
+<!doctype html >
 <html>
 <head>
-<title>plus2net.com : Pie chart using data from MySQL table</title>
+<title>HaniChart</title>
 </head>
 <body >
 <?Php
-require "config.php";// Database connection
+require "config-pdo.php";// Database connection
 
 if($stmt = $connection->query("SELECT language, nos  FROM chart_data")){
 
@@ -34,7 +34,7 @@ echo "<script>
 
 <div id="chart_div"></div>
 <br><br>
-<a href=https://www.plus2net.com/php_tutorial/chart-database.php>Pie Chart from MySQL database</a>
+
 </body>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
